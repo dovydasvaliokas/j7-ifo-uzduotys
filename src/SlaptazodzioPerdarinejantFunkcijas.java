@@ -23,6 +23,7 @@ public class SlaptazodzioPerdarinejantFunkcijas {
         String pakartotinassPassword = regNuskaitymas(skaitytuvas, "dar kartą savo password");
 
         System.out.println("arLoginNesutampaSuPassword(login, password) = " + arLoginNesutampaSuPassword(login, password));
+        System.out.println("arEmailoFormatasTeisingas(email) = " + arEmailoFormatasTeisingas(email));
 
     }
 
@@ -49,6 +50,25 @@ public class SlaptazodzioPerdarinejantFunkcijas {
      */
     public static boolean arLoginNesutampaSuPassword(String login, String password) {
         return !login.equals(password);
+    }
+
+    /**
+     * Funkcija patikrina ar gautume žodyje yra '@' ženklas ir '.' ženklas. Kadangi lyginama `char` o ne `String` reikšmės, tai galima naudoti == operatorių
+     * @param email tikrinamas žodis
+     * @return true, jeigu yra taškas ir emailas, false jeigu jų nėra.
+     */
+    public static boolean arEmailoFormatasTeisingas(String email) {
+        boolean arYraEta = false;
+        boolean arYraTaskas = false;
+        for (int i = 0; i < email.length(); i++) {
+            if (email.charAt(i) == '@') {
+                arYraEta = true;
+            }
+            if (email.charAt(i) == '.') {
+                arYraTaskas = true;
+            }
+        }
+        return arYraEta && arYraTaskas;
     }
 
 }
