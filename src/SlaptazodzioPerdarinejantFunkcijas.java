@@ -22,7 +22,7 @@ public class SlaptazodzioPerdarinejantFunkcijas {
         String password = regNuskaitymas(skaitytuvas, "password");
         String pakartotinassPassword = regNuskaitymas(skaitytuvas, "dar kartą savo password");
 
-        System.out.println(login + email + password + pakartotinassPassword);
+        System.out.println("arLoginNesutampaSuPassword(login, password) = " + arLoginNesutampaSuPassword(login, password));
 
     }
 
@@ -36,6 +36,19 @@ public class SlaptazodzioPerdarinejantFunkcijas {
     public static String regNuskaitymas(Scanner skaitytuvas, String kurisDalykas) {
         System.out.println("Įveskite savo " + kurisDalykas + ":" );
         return skaitytuvas.nextLine();
+    }
+
+
+    /**
+     * Funkcija patikrina ar login nesutampa su password.
+     * Sakiau, jog nenaudosiu Java sukurtų funkcijų, tačiau čia nėra kažkokia speciali funkcija, tiesiog paprasčiausias == operatorius,
+     * tačiau javoje tekstams negalima daryti == operatoriaus, todėl esu priverstas naudoti equals() funkciją (kuri yra tiesiog == pakaitalas)
+     * @param login loginas
+     * @param password password
+     * @return true, jeigu nesutampa, false jeigu sutampa.
+     */
+    public static boolean arLoginNesutampaSuPassword(String login, String password) {
+        return !login.equals(password);
     }
 
 }
