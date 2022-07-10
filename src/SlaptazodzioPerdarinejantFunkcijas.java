@@ -16,6 +16,13 @@ kiekvienam a-e punktui perkursiu funkcijas nuo nulio (nenaudosiu jau kai kurių 
  */
 public class SlaptazodzioPerdarinejantFunkcijas {
     public static void main(String[] args) {
+        Scanner skaitytuvas = new Scanner(System.in);
+        String login = regNuskaitymas(skaitytuvas, "login");
+        String email = regNuskaitymas(skaitytuvas, "email");
+        String password = regNuskaitymas(skaitytuvas, "password");
+        String pakartotinassPassword = regNuskaitymas(skaitytuvas, "dar kartą savo password");
+
+        System.out.println(login + email + password + pakartotinassPassword);
 
     }
 
