@@ -7,4 +7,13 @@ public class Uzduotis2 {
     public static void main(String[] args) {
 
     }
+
+    /**
+     * Funkcija patikrina ar skaičius yra lyginis.
+     * @param x tikrinamas skaičius
+     * @return true, jeigu lyginis, false jeigu ne.
+     */
+    public static boolean arLyginis(int x) {
+        return x % 2 == 0;
+    }
 }
