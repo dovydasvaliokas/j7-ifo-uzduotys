@@ -21,6 +21,14 @@ public class SlaptazodzioNaudojantJavosContains {
         String email = regNuskaitymas(skaitytuvas, "email");
         String password = regNuskaitymas(skaitytuvas, "password");
         String pakartotinassPassword = regNuskaitymas(skaitytuvas, "dar kartą savo password");
+
+        System.out.println("arLoginNesutampaSuPassword(login, password) = " + arLoginNesutampaSuPassword(login, password));
+        System.out.println("arTeisingasEmailoFormatas(email) = " + arTeisingasEmailoFormatas(email));
+        System.out.println("arSutampaSlaptazodziai(password, pakartotinassPassword) = " + arSutampaSlaptazodziai(password, pakartotinassPassword));
+        System.out.println("arSlaptazodisIlgesnis(password) = " + arSlaptazodisIlgesnis(password));
+        System.out.println("arSlaptazodyjeYraMazojiRaide(password) = " + arSlaptazodyjeYraMazojiRaide(password));
+        System.out.println("arSlaptazodyjeYraDidziojiRaide(password) = " + arSlaptazodyjeYraDidziojiRaide(password));
+        System.out.println("arYraSkaiciusPsw(password) = " + arYraSkaiciusPsw(password));
     }
 
     /**
@@ -48,6 +56,11 @@ public class SlaptazodzioNaudojantJavosContains {
         return !login.equals(password);
     }
 
+    /**
+     * Patikrina ar emailo formatas yra teisingas (turi eta ir tašką)
+     * @param email emailass
+     * @return true, jeigu yra eta ir taškas, falsse jeigu nėra
+     */
     public static boolean arTeisingasEmailoFormatas(String email) {
         return email.contains("@") && email.contains(".");
     }
@@ -90,5 +103,18 @@ public class SlaptazodzioNaudojantJavosContains {
         return !password.toLowerCase().equals(password);
     }
 
+    /**
+     * Funkcija patikrina ar yra skaičius slaptažodyje
+     * @param password slaptažodis
+     * @return true jeigu yra, false jeigu ne
+     */
+    public static boolean arYraSkaiciusPsw(String password) {
+        for (int i = 0; i < password.length(); i++) {
+            if (Character.isDigit(password.charAt(i))) {
+                return true;
+            }
+        }
+        return false;
+    }
 
 }
