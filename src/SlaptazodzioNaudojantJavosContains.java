@@ -48,6 +48,10 @@ public class SlaptazodzioNaudojantJavosContains {
         return !login.equals(password);
     }
 
+    public static boolean arTeisingasEmailoFormatas(String email) {
+        return email.contains("@") && email.contains(".");
+    }
+
 
     /**
      * Funkcija patikrina ar sutampa slaptažodžiai
