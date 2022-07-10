@@ -26,6 +26,7 @@ public class SlaptazodzioPerdarinejantFunkcijas {
         System.out.println("arEmailoFormatasTeisingas(email) = " + arEmailoFormatasTeisingas(email));
         System.out.println("arSutampaSlaptazodziai(password, pakartotinassPassword) = " + arSutampaSlaptazodziai(password, pakartotinassPassword));
         System.out.println("arSlaptazodisIlgesnis(password) = " + arSlaptazodisIlgesnis(password));
+        System.out.println("arSlaptazodyjeYraMazojiRaide(password) = " + arSlaptazodyjeYraMazojiRaide(password));
 
     }
 
@@ -90,6 +91,15 @@ public class SlaptazodzioPerdarinejantFunkcijas {
      */
     public static boolean arSlaptazodisIlgesnis(String password) {
         return password.length() > 10;
+    }
+
+    /**
+     * Funkcija patikrina ar slaptažodyje yra bent viena mažoji raidė
+     * @param password slaptažodis
+     * @return true, jeigu yra, false jeigu nėra.
+     */
+    public static boolean arSlaptazodyjeYraMazojiRaide(String password) {
+        return !password.toUpperCase().equals(password);
     }
 
 }
