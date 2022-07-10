@@ -12,7 +12,7 @@ e) ar password yra bent viena mažoji raidė
 f) ar password yra bent viena didžioji raidė
 e) ar password yra bent vienas skaičius
 
-kiekvienam a-e punktui perkursiu funkcijas nuo nulio (nenaudosiu jau kai kurių esančių Java funkcijų, išradinėsiu dviratį)
+b ir e punktams perkursiu funkcijas nuo nulio (nenaudosiu jau kai kurių esančių Java funkcijų, išradinėsiu dviratį)
  */
 public class SlaptazodzioPerdarinejantFunkcijas {
     public static void main(String[] args) {
@@ -25,6 +25,7 @@ public class SlaptazodzioPerdarinejantFunkcijas {
         System.out.println("arLoginNesutampaSuPassword(login, password) = " + arLoginNesutampaSuPassword(login, password));
         System.out.println("arEmailoFormatasTeisingas(email) = " + arEmailoFormatasTeisingas(email));
         System.out.println("arSutampaSlaptazodziai(password, pakartotinassPassword) = " + arSutampaSlaptazodziai(password, pakartotinassPassword));
+        System.out.println("arSlaptazodisIlgesnis(password) = " + arSlaptazodisIlgesnis(password));
 
     }
 
@@ -80,6 +81,15 @@ public class SlaptazodzioPerdarinejantFunkcijas {
      */
     public static boolean arSutampaSlaptazodziai(String password, String pakartotasPassword) {
         return password.equals(pakartotasPassword);
+    }
+
+    /**
+     * Funkcija patikrina ar slaptažodis yra ilgesnis už 10
+     * @param password slaptažodis
+     * @return true, jeigu ilgesnis, false jeigu ne
+     */
+    public static boolean arSlaptazodisIlgesnis(String password) {
+        return password.length() > 10;
     }
 
 }
