@@ -24,6 +24,7 @@ public class SlaptazodzioPerdarinejantFunkcijas {
 
         System.out.println("arLoginNesutampaSuPassword(login, password) = " + arLoginNesutampaSuPassword(login, password));
         System.out.println("arEmailoFormatasTeisingas(email) = " + arEmailoFormatasTeisingas(email));
+        System.out.println("arSutampaSlaptazodziai(password, pakartotinassPassword) = " + arSutampaSlaptazodziai(password, pakartotinassPassword));
 
     }
 
@@ -69,6 +70,16 @@ public class SlaptazodzioPerdarinejantFunkcijas {
             }
         }
         return arYraEta && arYraTaskas;
+    }
+
+    /**
+     * Funkcija patikrina ar sutampa slaptažodžiai
+     * @param password slaptažodis
+     * @param pakartotasPassword pakartotas slaptažodis
+     * @return true, jeigu sutampa, false jeigu ne
+     */
+    public static boolean arSutampaSlaptazodziai(String password, String pakartotasPassword) {
+        return password.equals(pakartotasPassword);
     }
 
 }
