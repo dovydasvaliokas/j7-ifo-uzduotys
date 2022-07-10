@@ -28,6 +28,7 @@ public class SlaptazodzioPerdarinejantFunkcijas {
         System.out.println("arSlaptazodisIlgesnis(password) = " + arSlaptazodisIlgesnis(password));
         System.out.println("arSlaptazodyjeYraMazojiRaide(password) = " + arSlaptazodyjeYraMazojiRaide(password));
         System.out.println("arSlaptazodyjeYraDidziojiRaide(password) = " + arSlaptazodyjeYraDidziojiRaide(password));
+        System.out.println("arPasswordeYraBentVienasSkaicius(password) = " + arPasswordeYraBentVienasSkaicius(password));
 
     }
 
@@ -110,5 +111,25 @@ public class SlaptazodzioPerdarinejantFunkcijas {
      */
     public static boolean arSlaptazodyjeYraDidziojiRaide(String password) {
         return !password.toLowerCase().equals(password);
+    }
+
+    /**
+     * Funkcija patikrina ar slaptažodyje yra skaičius. Susikuriu "skaičių" masyvą, kurie iš tikro yra char skaičiai.
+     * Tada einu per kiekvieną slaptažodžio simbolį ir ties kiekvienu simboliu einu per visą skaičių masyvą (Dėl to ciklas cikle) ir tikrinu kiekvieną slaptažodžio simbolį su kiekvienu skaičiauss simboliu
+     * Jei randu bent vieną atitinkantį - išsyk grąžinu true
+     * Jeigu pereina per visus slaptažodžio simbolius ir niekada negrąžina true - reiškias nebuvo skaičiu ir galiausiai grąžinu false
+     * @param password slaptažodis
+     * @return true jeigu yra skaičius, false jeigu nėra.
+     */
+    public static boolean arPasswordeYraBentVienasSkaicius(String password) {
+        char[] skaiciai = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
+        for (int i = 0; i < password.length(); i++) {
+            for (int j = 0; j < skaiciai.length; j++) {
+                if (password.charAt(i) == skaiciai[j]) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }
